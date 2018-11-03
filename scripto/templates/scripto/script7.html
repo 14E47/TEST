@@ -43,16 +43,27 @@
 
                 <form method="POST" action="/script7Part2/">
                     {% csrf_token %}
-{#                    <input type="hidden" name="csrfmiddlewaretoken" value="1QOgqNCsL9Nd1UAMF92QZtF8fYjg39KILW7OvEfgvdVGAYIRZOhGZAairXXgs0rX">#}
                     <p>
-                        <label for="id_file_url">File url:</label>
-                        <input type="text" name="file_url" required id="id_file_url" value="{{ file_url }}">
+                        {#                        <label for="id_file_url">File url:</label>#}
+                        <input type="text" name="file_url" required id="id_file_url" value="{{ file_url }}" placeholder="File URL" hidden>
                     </p>
-                    <p><label for="id_start_str">Start str:</label> <input type="text" name="start_str" required id="id_start_str"></p>
-                    <p><label for="id_end_str">End str:</label> <input type="text" name="end_str" required id="id_end_str"></p>
+                    {#                    <input type="hidden" name="csrfmiddlewaretoken" value="1QOgqNCsL9Nd1UAMF92QZtF8fYjg39KILW7OvEfgvdVGAYIRZOhGZAairXXgs0rX">#}
                     <p>
-                        <label for="id_deliminator">Deliminator:</label>
-                        <select name="deliminator" id="id_deliminator">
+{#                        <label for="id_input_column_name">Input column name:</label> #}
+                        <input type="text" name="input_column_name" required id="id_input_column_name" placeholder="Input Column Name">
+                    </p>
+                    <p>
+{#                        <label for="id_start_str">Start str:</label> #}
+                        <input type="text" name="start_str" required id="id_start_str" placeholder="Start String">
+                    </p>
+                    <p>
+{#                        <label for="id_end_str">End str:</label> #}
+                        <input type="text" name="end_str" required id="id_end_str" placeholder="End String">
+                    </p>
+                    <p>
+{#                        <label for="id_deliminator">Deliminator:</label>#}
+                        <select name="deliminator" id="id_deliminator" >
+                            <option>Choose Seperator</option>
                             <option value="01">SPACE</option>
                             <option value="02">TAB</option>
                             <option value="03">CAPITAL</option>
@@ -60,13 +71,20 @@
                             <option value="05">HYPHEN</option>
                         </select>
                     </p>
-                    <p><label for="id_input_column_name">Input column name:</label> <input type="text" name="input_column_name" required id="id_input_column_name"></p>
-                    <p><label for="id_output_column_name">Output column name:</label> <input type="text" name="output_column_name" required id="id_output_column_name"></p>
-                    <p><label for="id_common_data">Common data:</label> <input type="text" name="common_data" required id="id_common_data"></p>
 
                     <p>
-                        <label for="id_split_checkbox">Split checkbox:</label>
+{#                        <label for="id_output_column_name">Output column name:</label> #}
+                        <input type="text" name="output_column_name" required id="id_output_column_name" placeholder="Output Column Name">
+                    </p>
+                    <p>
+{#                        <label for="id_common_data">Common data:</label> #}
+                        <input type="text" name="common_data" required id="id_common_data" placeholder="Common Data">
+                    </p>
+
+                    <p>
+{#                        <label for="id_split_checkbox">Split checkbox:</label>#}
                         <select name="split_checkbox" id="id_split_checkbox">
+                            <option>Choose Split</option>
                             <option value="False">No</option>
                             <option value="True">Yes</option>
                         </select>
